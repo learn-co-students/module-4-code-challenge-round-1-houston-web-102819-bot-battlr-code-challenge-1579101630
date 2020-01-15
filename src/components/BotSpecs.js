@@ -1,7 +1,7 @@
 import React from "react";
 
 const BotSpecs = props => {
-  let { bot } = props;
+  let { bot, seeAll, enlist } = props;
 
   let botType;
 
@@ -19,20 +19,23 @@ const BotSpecs = props => {
       botType = <div />;
   }
 
+  const enlistHandler = () => {
+    enlist(bot.id)
+  }
   return (
-    <div className="ui segment">
-      <div className="ui two column centered grid">
-        <div className="row">
-          <div className="four wide column">
-            <img
+     <div className="ui segment">
+        <div className="ui two column centered grid">
+          <div className="row">
+           <div className="four wide column">
+              <img
               alt="oh no!"
               className="ui medium circular image bordered"
               src={bot.avatar_url}
             />
-          </div>
-          <div className="four wide column">
-            <h2>Name: {bot.name}</h2>
-            <p>
+        </div>
+        <div className="four wide column">
+              <h2>Name: {bot.name}</h2>
+               <p>
               <strong>Catchphrase: </strong>
               {bot.catchphrase}
             </p>
@@ -57,22 +60,16 @@ const BotSpecs = props => {
                   </div>
                 </div>
               </div>
-            </div>
+           </div>
             <button
               className="ui button fluid"
-              onClick={() =>
-                console.log('connect this to a function that shows all bots')
-              }
+              onClick={seeAll}
             >
               Go Back
             </button>
             <button
               className="ui button fluid"
-              onClick={() =>
-                console.log(
-                  "connect this to a function that adds this bot to your bot army list"
-                )
-              }
+              onClick={enlistHandler}
             >
               Enlist
             </button>
