@@ -20,7 +20,7 @@ const BotCard = props => {
   }
 
   return (
-    <div className="ui column">
+    <div className="ui column" onClick={this.props.addArmy}>
       <div
         className="ui card"
         key={bot.id}
@@ -56,7 +56,6 @@ const BotCard = props => {
       </div>
     </div>
   );
-
 };
 
 export default BotCard;
