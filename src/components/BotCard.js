@@ -20,7 +20,7 @@ const BotCard = props => {
   }
 
   return (
-    <div className="ui column">
+    <div onClick={() => props.toggleBots(bot)} className="ui column">
       <div
         className="ui card"
         key={bot.id}
